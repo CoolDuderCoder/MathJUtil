@@ -10,6 +10,9 @@ MathJUtil Is A Library That Helps With Math
 # LATEST VERSION
 VERSION 0.0.7 release
 
+# LATEST BETA VERSION
+VERSION 0.0.8-beta
+
 # BEWARE!
 Some Versions Of MathJUtil May Not Do As Excepected. If Any Issues Occur Please Try A Stable Or Older Version Of MathJUtil
 
