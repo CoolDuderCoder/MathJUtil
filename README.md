@@ -8,7 +8,7 @@
 
 This Project Is A Math Library Project For The Purpose Of Making Math An Easy Task
 
-This Project Has Been Written In A Static Way.
+This Project Has Been Written In A Staticly Typed Way.
 
 ## How To Do Vector Arthimetic
 Vector Arthimetic Might Be One Of Those Things That Developers Are Most Intrested In And Are Used The Most Accross Developers.
