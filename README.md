@@ -1,4 +1,5 @@
 ![GitHub all releases](https://img.shields.io/github/downloads/CoolDuderCoder/MathJUtil/total?logo=GitHub)
+![GitHub contributors](https://img.shields.io/github/contributors/CoolDuderCoder/MathJUtil?logo=GitHub)
 ![GitHub License](https://img.shields.io/github/license/CoolDuderCoder/MathJUtil?logo=GitHub)
 ![GitHub issues](https://img.shields.io/github/issues/CoolDuderCoder/MathJUtil?logo=GitHub)
 
