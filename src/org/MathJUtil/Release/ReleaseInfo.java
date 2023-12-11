@@ -1,300 +1,73 @@
-/**
- * @author CoolDuderCoder
- * 
- * EPL-2.0 license
- */
+/*****************************************************************************
+ * MIT License
+ * Copyright (c) 2023 CoolDuderCoder
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *****************************************************************************/
 
 package org.MathJUtil.Release;
 
+import java.lang.reflect.Method;
+
+import org.MathJUtil.Beta;
 import org.MathJUtil.MathUtil;
 
+/**
+ * A class that stores the release info
+ * @author CoolDuderCoder
+ */
 public class ReleaseInfo 
 {
 	public static final int VERSION_ID = 0x0;
 	public static final int RELEASE_ID = 0x1;
 	public static final int LISCENSE_ID = 0x2;
 	
-	private static final String VERSION_STRING = "0.0.9";
+	private static final String VERSION_STRING = "1.0.0";
 	private static final String RELEASE_STRING = "version " + VERSION_STRING + " beta";
-	private static final String LISCENSE_STRING = "Eclipse Public License - v 2.0\r\n"
-			+ "\r\n"
-			+ "    THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE\r\n"
-			+ "    PUBLIC LICENSE (\"AGREEMENT\"). ANY USE, REPRODUCTION OR DISTRIBUTION\r\n"
-			+ "    OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.\r\n"
-			+ "\r\n"
-			+ "1. DEFINITIONS\r\n"
-			+ "\r\n"
-			+ "\"Contribution\" means:\r\n"
-			+ "\r\n"
-			+ "  a) in the case of the initial Contributor, the initial content\r\n"
-			+ "     Distributed under this Agreement, and\r\n"
-			+ "\r\n"
-			+ "  b) in the case of each subsequent Contributor:\r\n"
-			+ "     i) changes to the Program, and\r\n"
-			+ "     ii) additions to the Program;\r\n"
-			+ "  where such changes and/or additions to the Program originate from\r\n"
-			+ "  and are Distributed by that particular Contributor. A Contribution\r\n"
-			+ "  \"originates\" from a Contributor if it was added to the Program by\r\n"
-			+ "  such Contributor itself or anyone acting on such Contributor's behalf.\r\n"
-			+ "  Contributions do not include changes or additions to the Program that\r\n"
-			+ "  are not Modified Works.\r\n"
-			+ "\r\n"
-			+ "\"Contributor\" means any person or entity that Distributes the Program.\r\n"
-			+ "\r\n"
-			+ "\"Licensed Patents\" mean patent claims licensable by a Contributor which\r\n"
-			+ "are necessarily infringed by the use or sale of its Contribution alone\r\n"
-			+ "or when combined with the Program.\r\n"
-			+ "\r\n"
-			+ "\"Program\" means the Contributions Distributed in accordance with this\r\n"
-			+ "Agreement.\r\n"
-			+ "\r\n"
-			+ "\"Recipient\" means anyone who receives the Program under this Agreement\r\n"
-			+ "or any Secondary License (as applicable), including Contributors.\r\n"
-			+ "\r\n"
-			+ "\"Derivative Works\" shall mean any work, whether in Source Code or other\r\n"
-			+ "form, that is based on (or derived from) the Program and for which the\r\n"
-			+ "editorial revisions, annotations, elaborations, or other modifications\r\n"
-			+ "represent, as a whole, an original work of authorship.\r\n"
-			+ "\r\n"
-			+ "\"Modified Works\" shall mean any work in Source Code or other form that\r\n"
-			+ "results from an addition to, deletion from, or modification of the\r\n"
-			+ "contents of the Program, including, for purposes of clarity any new file\r\n"
-			+ "in Source Code form that contains any contents of the Program. Modified\r\n"
-			+ "Works shall not include works that contain only declarations,\r\n"
-			+ "interfaces, types, classes, structures, or files of the Program solely\r\n"
-			+ "in each case in order to link to, bind by name, or subclass the Program\r\n"
-			+ "or Modified Works thereof.\r\n"
-			+ "\r\n"
-			+ "\"Distribute\" means the acts of a) distributing or b) making available\r\n"
-			+ "in any manner that enables the transfer of a copy.\r\n"
-			+ "\r\n"
-			+ "\"Source Code\" means the form of a Program preferred for making\r\n"
-			+ "modifications, including but not limited to software source code,\r\n"
-			+ "documentation source, and configuration files.\r\n"
-			+ "\r\n"
-			+ "\"Secondary License\" means either the GNU General Public License,\r\n"
-			+ "Version 2.0, or any later versions of that license, including any\r\n"
-			+ "exceptions or additional permissions as identified by the initial\r\n"
-			+ "Contributor.\r\n"
-			+ "\r\n"
-			+ "2. GRANT OF RIGHTS\r\n"
-			+ "\r\n"
-			+ "  a) Subject to the terms of this Agreement, each Contributor hereby\r\n"
-			+ "  grants Recipient a non-exclusive, worldwide, royalty-free copyright\r\n"
-			+ "  license to reproduce, prepare Derivative Works of, publicly display,\r\n"
-			+ "  publicly perform, Distribute and sublicense the Contribution of such\r\n"
-			+ "  Contributor, if any, and such Derivative Works.\r\n"
-			+ "\r\n"
-			+ "  b) Subject to the terms of this Agreement, each Contributor hereby\r\n"
-			+ "  grants Recipient a non-exclusive, worldwide, royalty-free patent\r\n"
-			+ "  license under Licensed Patents to make, use, sell, offer to sell,\r\n"
-			+ "  import and otherwise transfer the Contribution of such Contributor,\r\n"
-			+ "  if any, in Source Code or other form. This patent license shall\r\n"
-			+ "  apply to the combination of the Contribution and the Program if, at\r\n"
-			+ "  the time the Contribution is added by the Contributor, such addition\r\n"
-			+ "  of the Contribution causes such combination to be covered by the\r\n"
-			+ "  Licensed Patents. The patent license shall not apply to any other\r\n"
-			+ "  combinations which include the Contribution. No hardware per se is\r\n"
-			+ "  licensed hereunder.\r\n"
-			+ "\r\n"
-			+ "  c) Recipient understands that although each Contributor grants the\r\n"
-			+ "  licenses to its Contributions set forth herein, no assurances are\r\n"
-			+ "  provided by any Contributor that the Program does not infringe the\r\n"
-			+ "  patent or other intellectual property rights of any other entity.\r\n"
-			+ "  Each Contributor disclaims any liability to Recipient for claims\r\n"
-			+ "  brought by any other entity based on infringement of intellectual\r\n"
-			+ "  property rights or otherwise. As a condition to exercising the\r\n"
-			+ "  rights and licenses granted hereunder, each Recipient hereby\r\n"
-			+ "  assumes sole responsibility to secure any other intellectual\r\n"
-			+ "  property rights needed, if any. For example, if a third party\r\n"
-			+ "  patent license is required to allow Recipient to Distribute the\r\n"
-			+ "  Program, it is Recipient's responsibility to acquire that license\r\n"
-			+ "  before distributing the Program.\r\n"
-			+ "\r\n"
-			+ "  d) Each Contributor represents that to its knowledge it has\r\n"
-			+ "  sufficient copyright rights in its Contribution, if any, to grant\r\n"
-			+ "  the copyright license set forth in this Agreement.\r\n"
-			+ "\r\n"
-			+ "  e) Notwithstanding the terms of any Secondary License, no\r\n"
-			+ "  Contributor makes additional grants to any Recipient (other than\r\n"
-			+ "  those set forth in this Agreement) as a result of such Recipient's\r\n"
-			+ "  receipt of the Program under the terms of a Secondary License\r\n"
-			+ "  (if permitted under the terms of Section 3).\r\n"
-			+ "\r\n"
-			+ "3. REQUIREMENTS\r\n"
-			+ "\r\n"
-			+ "3.1 If a Contributor Distributes the Program in any form, then:\r\n"
-			+ "\r\n"
-			+ "  a) the Program must also be made available as Source Code, in\r\n"
-			+ "  accordance with section 3.2, and the Contributor must accompany\r\n"
-			+ "  the Program with a statement that the Source Code for the Program\r\n"
-			+ "  is available under this Agreement, and informs Recipients how to\r\n"
-			+ "  obtain it in a reasonable manner on or through a medium customarily\r\n"
-			+ "  used for software exchange; and\r\n"
-			+ "\r\n"
-			+ "  b) the Contributor may Distribute the Program under a license\r\n"
-			+ "  different than this Agreement, provided that such license:\r\n"
-			+ "     i) effectively disclaims on behalf of all other Contributors all\r\n"
-			+ "     warranties and conditions, express and implied, including\r\n"
-			+ "     warranties or conditions of title and non-infringement, and\r\n"
-			+ "     implied warranties or conditions of merchantability and fitness\r\n"
-			+ "     for a particular purpose;\r\n"
-			+ "\r\n"
-			+ "     ii) effectively excludes on behalf of all other Contributors all\r\n"
-			+ "     liability for damages, including direct, indirect, special,\r\n"
-			+ "     incidental and consequential damages, such as lost profits;\r\n"
-			+ "\r\n"
-			+ "     iii) does not attempt to limit or alter the recipients' rights\r\n"
-			+ "     in the Source Code under section 3.2; and\r\n"
-			+ "\r\n"
-			+ "     iv) requires any subsequent distribution of the Program by any\r\n"
-			+ "     party to be under a license that satisfies the requirements\r\n"
-			+ "     of this section 3.\r\n"
-			+ "\r\n"
-			+ "3.2 When the Program is Distributed as Source Code:\r\n"
-			+ "\r\n"
-			+ "  a) it must be made available under this Agreement, or if the\r\n"
-			+ "  Program (i) is combined with other material in a separate file or\r\n"
-			+ "  files made available under a Secondary License, and (ii) the initial\r\n"
-			+ "  Contributor attached to the Source Code the notice described in\r\n"
-			+ "  Exhibit A of this Agreement, then the Program may be made available\r\n"
-			+ "  under the terms of such Secondary Licenses, and\r\n"
-			+ "\r\n"
-			+ "  b) a copy of this Agreement must be included with each copy of\r\n"
-			+ "  the Program.\r\n"
-			+ "\r\n"
-			+ "3.3 Contributors may not remove or alter any copyright, patent,\r\n"
-			+ "trademark, attribution notices, disclaimers of warranty, or limitations\r\n"
-			+ "of liability (\"notices\") contained within the Program from any copy of\r\n"
-			+ "the Program which they Distribute, provided that Contributors may add\r\n"
-			+ "their own appropriate notices.\r\n"
-			+ "\r\n"
-			+ "4. COMMERCIAL DISTRIBUTION\r\n"
-			+ "\r\n"
-			+ "Commercial distributors of software may accept certain responsibilities\r\n"
-			+ "with respect to end users, business partners and the like. While this\r\n"
-			+ "license is intended to facilitate the commercial use of the Program,\r\n"
-			+ "the Contributor who includes the Program in a commercial product\r\n"
-			+ "offering should do so in a manner which does not create potential\r\n"
-			+ "liability for other Contributors. Therefore, if a Contributor includes\r\n"
-			+ "the Program in a commercial product offering, such Contributor\r\n"
-			+ "(\"Commercial Contributor\") hereby agrees to defend and indemnify every\r\n"
-			+ "other Contributor (\"Indemnified Contributor\") against any losses,\r\n"
-			+ "damages and costs (collectively \"Losses\") arising from claims, lawsuits\r\n"
-			+ "and other legal actions brought by a third party against the Indemnified\r\n"
-			+ "Contributor to the extent caused by the acts or omissions of such\r\n"
-			+ "Commercial Contributor in connection with its distribution of the Program\r\n"
-			+ "in a commercial product offering. The obligations in this section do not\r\n"
-			+ "apply to any claims or Losses relating to any actual or alleged\r\n"
-			+ "intellectual property infringement. In order to qualify, an Indemnified\r\n"
-			+ "Contributor must: a) promptly notify the Commercial Contributor in\r\n"
-			+ "writing of such claim, and b) allow the Commercial Contributor to control,\r\n"
-			+ "and cooperate with the Commercial Contributor in, the defense and any\r\n"
-			+ "related settlement negotiations. The Indemnified Contributor may\r\n"
-			+ "participate in any such claim at its own expense.\r\n"
-			+ "\r\n"
-			+ "For example, a Contributor might include the Program in a commercial\r\n"
-			+ "product offering, Product X. That Contributor is then a Commercial\r\n"
-			+ "Contributor. If that Commercial Contributor then makes performance\r\n"
-			+ "claims, or offers warranties related to Product X, those performance\r\n"
-			+ "claims and warranties are such Commercial Contributor's responsibility\r\n"
-			+ "alone. Under this section, the Commercial Contributor would have to\r\n"
-			+ "defend claims against the other Contributors related to those performance\r\n"
-			+ "claims and warranties, and if a court requires any other Contributor to\r\n"
-			+ "pay any damages as a result, the Commercial Contributor must pay\r\n"
-			+ "those damages.\r\n"
-			+ "\r\n"
-			+ "5. NO WARRANTY\r\n"
-			+ "\r\n"
-			+ "EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT\r\n"
-			+ "PERMITTED BY APPLICABLE LAW, THE PROGRAM IS PROVIDED ON AN \"AS IS\"\r\n"
-			+ "BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR\r\n"
-			+ "IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF\r\n"
-			+ "TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR\r\n"
-			+ "PURPOSE. Each Recipient is solely responsible for determining the\r\n"
-			+ "appropriateness of using and distributing the Program and assumes all\r\n"
-			+ "risks associated with its exercise of rights under this Agreement,\r\n"
-			+ "including but not limited to the risks and costs of program errors,\r\n"
-			+ "compliance with applicable laws, damage to or loss of data, programs\r\n"
-			+ "or equipment, and unavailability or interruption of operations.\r\n"
-			+ "\r\n"
-			+ "6. DISCLAIMER OF LIABILITY\r\n"
-			+ "\r\n"
-			+ "EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT\r\n"
-			+ "PERMITTED BY APPLICABLE LAW, NEITHER RECIPIENT NOR ANY CONTRIBUTORS\r\n"
-			+ "SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\r\n"
-			+ "EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST\r\n"
-			+ "PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\r\n"
-			+ "CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\r\n"
-			+ "ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE\r\n"
-			+ "EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE\r\n"
-			+ "POSSIBILITY OF SUCH DAMAGES.\r\n"
-			+ "\r\n"
-			+ "7. GENERAL\r\n"
-			+ "\r\n"
-			+ "If any provision of this Agreement is invalid or unenforceable under\r\n"
-			+ "applicable law, it shall not affect the validity or enforceability of\r\n"
-			+ "the remainder of the terms of this Agreement, and without further\r\n"
-			+ "action by the parties hereto, such provision shall be reformed to the\r\n"
-			+ "minimum extent necessary to make such provision valid and enforceable.\r\n"
-			+ "\r\n"
-			+ "If Recipient institutes patent litigation against any entity\r\n"
-			+ "(including a cross-claim or counterclaim in a lawsuit) alleging that the\r\n"
-			+ "Program itself (excluding combinations of the Program with other software\r\n"
-			+ "or hardware) infringes such Recipient's patent(s), then such Recipient's\r\n"
-			+ "rights granted under Section 2(b) shall terminate as of the date such\r\n"
-			+ "litigation is filed.\r\n"
-			+ "\r\n"
-			+ "All Recipient's rights under this Agreement shall terminate if it\r\n"
-			+ "fails to comply with any of the material terms or conditions of this\r\n"
-			+ "Agreement and does not cure such failure in a reasonable period of\r\n"
-			+ "time after becoming aware of such noncompliance. If all Recipient's\r\n"
-			+ "rights under this Agreement terminate, Recipient agrees to cease use\r\n"
-			+ "and distribution of the Program as soon as reasonably practicable.\r\n"
-			+ "However, Recipient's obligations under this Agreement and any licenses\r\n"
-			+ "granted by Recipient relating to the Program shall continue and survive.\r\n"
-			+ "\r\n"
-			+ "Everyone is permitted to copy and distribute copies of this Agreement,\r\n"
-			+ "but in order to avoid inconsistency the Agreement is copyrighted and\r\n"
-			+ "may only be modified in the following manner. The Agreement Steward\r\n"
-			+ "reserves the right to publish new versions (including revisions) of\r\n"
-			+ "this Agreement from time to time. No one other than the Agreement\r\n"
-			+ "Steward has the right to modify this Agreement. The Eclipse Foundation\r\n"
-			+ "is the initial Agreement Steward. The Eclipse Foundation may assign the\r\n"
-			+ "responsibility to serve as the Agreement Steward to a suitable separate\r\n"
-			+ "entity. Each new version of the Agreement will be given a distinguishing\r\n"
-			+ "version number. The Program (including Contributions) may always be\r\n"
-			+ "Distributed subject to the version of the Agreement under which it was\r\n"
-			+ "received. In addition, after a new version of the Agreement is published,\r\n"
-			+ "Contributor may elect to Distribute the Program (including its\r\n"
-			+ "Contributions) under the new version.\r\n"
-			+ "\r\n"
-			+ "Except as expressly stated in Sections 2(a) and 2(b) above, Recipient\r\n"
-			+ "receives no rights or licenses to the intellectual property of any\r\n"
-			+ "Contributor under this Agreement, whether expressly, by implication,\r\n"
-			+ "estoppel or otherwise. All rights in the Program not expressly granted\r\n"
-			+ "under this Agreement are reserved. Nothing in this Agreement is intended\r\n"
-			+ "to be enforceable by any entity that is not a Contributor or Recipient.\r\n"
-			+ "No third-party beneficiary rights are created under this Agreement.\r\n"
-			+ "\r\n"
-			+ "Exhibit A - Form of Secondary Licenses Notice\r\n"
-			+ "\r\n"
-			+ "\"This Source Code may also be made available under the following\r\n"
-			+ "Secondary Licenses when the conditions for such availability set forth\r\n"
-			+ "in the Eclipse Public License, v. 2.0 are satisfied: {name license(s),\r\n"
-			+ "version(s), and exceptions or additional permissions here}.\"\r\n"
-			+ "\r\n"
-			+ "  Simply including a copy of this Agreement, including this Exhibit A\r\n"
-			+ "  is not sufficient to license the Source Code under Secondary Licenses.\r\n"
-			+ "\r\n"
-			+ "  If it is not possible or desirable to put the notice in a particular\r\n"
-			+ "  file, then You may include the notice in a location (such as a LICENSE\r\n"
-			+ "  file in a relevant directory) where a recipient would be likely to\r\n"
-			+ "  look for such a notice.\r\n"
-			+ "\r\n"
-			+ "  You may add additional accurate notices of copyright ownership.";
+	private static final String LISCENSE_STRING = "MIT License\r\n"
+													+ "\r\n"
+													+ "Copyright (c) 2023 CoolDuderCoder\r\n"
+													+ "\r\n"
+													+ "Permission is hereby granted, free of charge, to any person obtaining a copy\r\n"
+													+ "of this software and associated documentation files (the \"Software\"), to deal\r\n"
+													+ "in the Software without restriction, including without limitation the rights\r\n"
+													+ "to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n"
+													+ "copies of the Software, and to permit persons to whom the Software is\r\n"
+													+ "furnished to do so, subject to the following conditions:\r\n"
+													+ "\r\n"
+													+ "The above copyright notice and this permission notice shall be included in all\r\n"
+													+ "copies or substantial portions of the Software.\r\n"
+													+ "\r\n"
+													+ "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n"
+													+ "IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n"
+													+ "FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n"
+													+ "AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n"
+													+ "LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n"
+													+ "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n"
+													+ "SOFTWARE.";
 	private static final String INVALID_STRING = "INVALID ID, NO CONTENT PROVIDED!";
 	
+	/**
+	 * Gets the content of the id passed in
+	 * @param type
+	 * @return content of the id passed in
+	 */
 	public static String getInfo(int type)
 	{
 		if (MathUtil.equal(type, VERSION_ID))
@@ -305,5 +78,15 @@ public class ReleaseInfo
 			return LISCENSE_STRING;
 		
 		return INVALID_STRING;
+	}
+	
+	/**
+	 * Checks if a method is beta
+	 * @param method
+	 * @return if a method is beta
+	 */
+	public static boolean isMethodBeta(Method method)
+	{
+		return method.isAnnotationPresent(Beta.class);
 	}
 }
