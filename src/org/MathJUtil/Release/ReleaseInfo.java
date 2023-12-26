@@ -38,8 +38,8 @@ public class ReleaseInfo
 	public static final int RELEASE_ID = 0x1;
 	public static final int LISCENSE_ID = 0x2;
 	
-	private static final String VERSION_STRING = "1.0.0";
-	private static final String RELEASE_STRING = "version " + VERSION_STRING + " beta";
+	private static final String VERSION_STRING = "1.0.1";
+	private static final String RELEASE_STRING = "version " + VERSION_STRING;
 	private static final String LISCENSE_STRING = "MIT License\r\n"
 													+ "\r\n"
 													+ "Copyright (c) 2023 CoolDuderCoder\r\n"
